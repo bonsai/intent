@@ -1,0 +1,24 @@
+@prefix intent: <https://bonsai.dev/intent#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+intent:Intent a owl:Class ; rdfs:label "Intent" .
+intent:Actor a owl:Class ; rdfs:label "Actor" .
+intent:Goal a owl:Class ; rdfs:label "Goal" .
+intent:Object a owl:Class ; rdfs:label "Object" .
+intent:Context a owl:Class ; rdfs:label "Context" .
+intent:Constraint a owl:Class ; rdfs:label "Constraint" .
+intent:Action a owl:Class ; rdfs:label "Action" .
+intent:Plan a owl:Class ; rdfs:label "Plan" .
+intent:Outcome a owl:Class ; rdfs:label "Outcome" .
+intent:Evidence a owl:Class ; rdfs:label "Evidence" .
+
+intent:hasIntent a owl:ObjectProperty ; rdfs:domain intent:Actor ; rdfs:range intent:Intent .
+intent:intendsGoal a owl:ObjectProperty ; rdfs:domain intent:Intent ; rdfs:range intent:Goal .
+intent:targets a owl:ObjectProperty ; rdfs:domain intent:Intent ; rdfs:range intent:Object .
+intent:occursIn a owl:ObjectProperty ; rdfs:domain intent:Intent ; rdfs:range intent:Context .
+intent:constrainedBy a owl:ObjectProperty ; rdfs:domain intent:Intent ; rdfs:range intent:Constraint .
+intent:plannedBy a owl:ObjectProperty ; rdfs:domain intent:Intent ; rdfs:range intent:Plan .
+intent:realizedBy a owl:ObjectProperty ; rdfs:domain intent:Intent ; rdfs:range intent:Action .
+intent:produces a owl:ObjectProperty ; rdfs:domain intent:Action ; rdfs:range intent:Outcome .
+intent:supportedBy a owl:ObjectProperty ; rdfs:domain intent:Intent ; rdfs:range intent:Evidence .
